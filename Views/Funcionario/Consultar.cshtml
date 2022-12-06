@@ -1,0 +1,35 @@
+@model IEnumerable<folha_de_ponto.Models.FolhaPonto>
+
+@{
+    ViewData["Title"] = "Detalhes dos pontos";
+}
+
+<h1>Detalhes dos pontos</h1>
+@* Apresenta todos os pontos registrados com o código do funcionário e o horário *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFuncionario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.IdFuncionario)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Data)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Ponto">Voltar</a>

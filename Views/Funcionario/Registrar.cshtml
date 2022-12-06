@@ -1,0 +1,29 @@
+@model folha_de_ponto.Models.FolhaPonto
+
+@{
+    ViewData["Title"] = "Registrar Ponto";
+}
+
+<h1>Registrar Ponto</h1>
+
+<hr/>
+@* Realiza o registro do ponto ao informar o código do funcionário *@
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Registrar">
+            <div class="form-group">
+                <label asp-for="IdFuncionario" class="control-label"></label>
+                <input asp-for="IdFuncionario" class="form-control" />
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Registrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</hr>
+<br>
+<div>
+    <a asp-action="Ponto">Voltar</a>
+</div>

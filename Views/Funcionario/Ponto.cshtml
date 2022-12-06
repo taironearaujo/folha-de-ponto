@@ -1,0 +1,41 @@
+@model IEnumerable<folha_de_ponto.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Ponto";
+}
+
+<h2>Funcionários - Ponto</h2>
+@* Listar os funcionários com seus respectivos códigos de cadastro *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Registrar">Registrar Ponto</a> |
+    <a asp-action="Consultar">Consultar Pontos</a>
+</div>
